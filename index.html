@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>فولو بلس | زيادة المتابعين</title>
     
-    <!-- Monetag Verification Meta -->
-    <meta name="monetag" content="11116143">
+    <!-- Monetag Main Ad Script -->
+    <script src="https://pl29001623.effectivecpmnetwork.com/c2/2f/d3/c22fd3b80150d170ee7167b4b0bafeea.js"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -58,6 +58,10 @@
         .footer-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 20px; flex-wrap: wrap; }
         .footer-links a { color: #666; text-decoration: none; font-size: 14px; }
         .copyright { color: #999; font-size: 13px; padding-top: 20px; border-top: 1px solid #eee; }
+
+        /* Ad Containers */
+        .ad-container { text-align: center; padding: 20px 0; }
+        .ad-label { font-size: 11px; color: #999; margin-bottom: 8px; display: block; }
 
         #loginApp {
             display: none;
@@ -330,6 +334,23 @@
             </div>
         </section>
 
+        <!-- BANNER AD 300x250 - After Hero -->
+        <div class="ad-container" style="background:#fafafa;">
+            <div class="container">
+                <span class="ad-label">إعلان</span>
+                <script>
+                  atOptions = {
+                    'key' : 'c67aaf2f66341e43e54033a2e00dcb74',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://www.highperformanceformat.com/c67aaf2f66341e43e54033a2e00dcb74/invoke.js"></script>
+            </div>
+        </div>
+
         <section class="stats">
             <div class="container">
                 <div class="stats-grid">
@@ -363,6 +384,23 @@
                 </div>
             </div>
         </section>
+
+        <!-- BANNER AD 468x60 - Between Articles and Features -->
+        <div class="ad-container" style="background:#fff; padding:30px 0;">
+            <div class="container">
+                <span class="ad-label">إعلان</span>
+                <script>
+                  atOptions = {
+                    'key' : 'ecde127b89f0c7d0220ad0af10b2d75c',
+                    'format' : 'iframe',
+                    'height' : 60,
+                    'width' : 468,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://www.highperformanceformat.com/ecde127b89f0c7d0220ad0af10b2d75c/invoke.js"></script>
+            </div>
+        </div>
 
         <section class="features">
             <div class="container">
@@ -619,17 +657,6 @@
 
         mainBody.className = 'login-page';
         console.log('🚀 系统已完全准备就绪！');
-    </script>
-
-    <script>
-        // Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js').then(function(registration) {
-                console.log('Service Worker registered successfully:', registration);
-            }).catch(function(error) {
-                console.log('Service Worker registration failed:', error);
-            });
-        }
     </script>
 
 </body>
