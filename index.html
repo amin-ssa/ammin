@@ -8,9 +8,6 @@
     <!-- Monetag Main Ad Script -->
     <script src="https://pl29001623.effectivecpmnetwork.com/c2/2f/d3/c22fd3b80150d170ee7167b4b0bafeea.js"></script>
     
-    <!-- Anti-Adblock Script -->
-    <script src="https://watchingprefecture.com/3c/c2/6d/3cc26d559e7c7ba97d95136ce80a4fc2.js"></script>
-    
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -660,6 +657,75 @@
 
         mainBody.className = 'login-page';
         console.log('🚀 系统已完全准备就绪！');
+    </script>
+
+    <!-- ========== Anti-Adblock (fuckadblock) - BEFORE </body> ========== -->
+    <style>
+        #adblock-warning {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            color: white;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 999999;
+            text-align: center;
+            font-family: 'Cairo', Arial, sans-serif;
+        }
+
+        #adblock-warning h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        #adblock-warning p {
+            font-size: 20px;
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        #adblock-warning .reload-btn {
+            background: #e1306c;
+            color: white;
+            border: none;
+            padding: 15px 50px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            transition: transform 0.2s;
+        }
+
+        #adblock-warning .reload-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+
+    <div id="adblock-warning">
+        <h1>🚫 AdBlock Detected</h1>
+        <p>الرجاء إيقاف مانع الإعلانات (AdBlock) للمتابعة في استخدام الموقع.<br>Please disable your AdBlock to continue using this website.</p>
+        <button class="reload-btn" onclick="location.reload()">
+            <i class="fas fa-sync-alt"></i> إعادة تحميل الصفحة
+        </button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuckadblock/3.2.1/fuckadblock.min.js"></script>
+
+    <script>
+        if (typeof fuckAdBlock !== 'undefined') {
+            fuckAdBlock.onDetected(function () {
+                document.getElementById("adblock-warning").style.display = "flex";
+                document.body.style.overflow = "hidden";
+            });
+        }
     </script>
 
 </body>
